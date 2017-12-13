@@ -15,10 +15,8 @@ config.read(os.path.join(basedir, 'settings.config'))
 logging.basicConfig(level=logging.DEBUG)
 logging.info("Starting the MediaCloud example Flask app!")
 
-api_key = os.environ.get('API_KEY')
 ### clean a mediacloud api client
-mc = mediacloud.api.MediaCloud( api_key )
-print(config.get('mediacloud','api_key'))
+mc = mediacloud.api.MediaCloud( config.get('mediacloud','api_key') )
 
 app = Flask(__name__)
 
